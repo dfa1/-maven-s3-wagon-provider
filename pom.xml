@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.humaorie</groupId>
+    <artifactId>maven-s3-wagon-provider</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>maven-s3-wagon-provider</name>
+    <url>http://www.humaorie.com</url>
+    <description>S3 Wagon Provider</description>
+    <repositories>
+        <repository>
+            <name>jets3t</name>
+            <id>jets3t</id>
+            <url>http://jets3t.s3.amazonaws.com/maven2</url>
+        </repository>
+    </repositories>
+    <dependencies>
+        <dependency>
+            <groupId>net.java.dev.jets3t</groupId>
+            <artifactId>jets3t</artifactId>
+            <version>0.7.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.wagon</groupId>
+            <artifactId>wagon-provider-api</artifactId>
+            <version>1.0-beta-5</version>
+        </dependency>
+    </dependencies>
+    <distributionManagement>
+        <repository>
+            <id>humaorie-s3</id>
+            <url>s3://maven.humaorie.com</url>
+        </repository>
+    </distributionManagement>
+    <build>
+        <extensions>
+            <extension>
+                <groupId>com.humaorie</groupId>
+                <artifactId>maven-s3-wagon-provider</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </extension>
+        </extensions>
+    </build>
+</project>
